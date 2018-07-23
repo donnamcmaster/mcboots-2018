@@ -22,11 +22,20 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 			<span class="icon-bar"></span>
 		</button>
 		<a class="navbar-brand" href="<?= home_url(); ?>/" rel="home"><?= bloginfo( 'name' ); ?></a>
+<?php
+	if ( has_nav_menu( 'social_media' ) ) {
+		wp_nav_menu( array( 'theme_location' => 'social_media', 'menu_class' => 'menu-social header' ) );
+	}
+?>
 	</div>
 
-	<?php if ( has_nav_menu( 'primary_navigation' ) ) : ?>
-		<nav class="collapse navbar-collapse" role="navigation">
-			<?php wp_nav_menu( ['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'] ); ?>
-		</nav>
-	<?php endif; ?>
+<?php
+	if ( has_nav_menu( 'primary_navigation' ) ) {
+?>
+	<nav class="collapse navbar-collapse" role="navigation">
+		<?php wp_nav_menu( ['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'] ); ?>
+	</nav>
+<?php
+	}
+?>
 </header>
