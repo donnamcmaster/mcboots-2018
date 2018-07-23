@@ -13,7 +13,7 @@ A starter theme called McBoots.
 
 == Description ==
 
-McBoots is a parent theme based on the Bootstrap 3 framework. 
+McBoots is a parent theme based on the Bootstrap 4 framework. 
 
 == Installation ==
 
@@ -25,7 +25,7 @@ McBoots is a parent theme based on the Bootstrap 3 framework.
 
 == Changelog ==
 
-= 0.1 - August 1, 2016 =
+= 0.1 - July 2018 =
 * Templates are working well enough to start styling. 
 
 == Credits ==
