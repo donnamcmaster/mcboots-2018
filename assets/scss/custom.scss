@@ -1,5 +1,5 @@
-/*!
- * McBoots4 0.1
+/*
+ * McBoots 2018, v 0.1
  */
 
 // override Bootstrap 4 SASS variables
@@ -50,16 +50,10 @@
    Media Queries
    ========================================================================== */
 
-$screen-sm-min: map_get($grid-breakpoints, "sm");
-$screen-md-min: map_get($grid-breakpoints, "md");
-$screen-lg-min: map_get($grid-breakpoints, "lg");
-$screen-xl-min: map_get($grid-breakpoints, "xl");
-
 @include media-breakpoint-up(sm) {
 	
 }
 
-//@media (min-width: $screen-md-min) {
 @include media-breakpoint-up(md) {
 	.phone-only {
 		display: none !important;
@@ -88,9 +82,9 @@ $screen-xl-min: map_get($grid-breakpoints, "xl");
 
 }
 
-@media (min-width: $screen-lg-min) {
+@include media-breakpoint-up(lg) {
 }
 
-@media (min-width: $screen-xl-min) {
+@include media-breakpoint-up(xl) {
 }
 
