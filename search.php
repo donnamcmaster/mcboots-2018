@@ -1,8 +1,11 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * The template for displaying search results pages.
+ * The template for displaying search results pages
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 use McBoots\Views;

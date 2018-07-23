@@ -1,8 +1,15 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * The template for displaying the footer.
+ * Footer Template
+ * 
+ * - displays the <footer> block 
+ * - typically includes navigation & copyright
+ * - does not include the call to wp_footer(); that is found in layout.php
  *
  * @package McBoots-2018
+ * @since 0.1
  */
 ?>
 

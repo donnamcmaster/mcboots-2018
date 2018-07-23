@@ -6,13 +6,13 @@
  * - logo and other branding
  * - main navigation
  *
- * Example: http://tgwca.org/
+ * This alternative:
  * - very simple
  * - utility/site menu upper right
  * - logo left and tagline to the right of it
  * - full-width nav bar separates header from body
  *
- * @package McBoots
+ * @package McBoots-2018
  */
 ?>
 

@@ -1,8 +1,11 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * The template for displaying archive pages.
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 use McBoots\Views;
@@ -23,7 +26,7 @@ if ( have_posts() ) {
 <?php
 	the_posts_navigation();
 
-// empty list
 } else {
+	// empty list
 	get_template_part( 'template-parts/content', 'none' );
 }

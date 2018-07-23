@@ -1,8 +1,11 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- *	Configure Theme Support
+ * Configure Theme Support
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_action( 'after_setup_theme', function() {

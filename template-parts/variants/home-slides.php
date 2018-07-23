@@ -2,7 +2,7 @@
 /**
  * Sample Home Page Carousel
  *
- * - uses Bootstrap carousel
+ * - uses Bootstrap 3 carousel
  * - uses Piklist for meta configuration
  *
  * @package McBoots

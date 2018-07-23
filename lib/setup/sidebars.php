@@ -1,14 +1,16 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- *	Register Sidebars / Widget Areas
+ * Register Sidebars / Widget Areas
  *
- *	@package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_action( 'after_setup_theme', function() {
 
 	if ( current_theme_supports ( 'mcboots-sidebars' ) ) {
-
 		add_action( 'widgets_init', function() {
 			register_sidebar( array(
 				'name'          => esc_html__( 'Primary Sidebar', 'mcboots' ),
@@ -33,7 +35,5 @@ add_action( 'after_setup_theme', function() {
 				) );
 			}
 		}); // end "widgets_init" action
-
 	}
-	
 }, 99 ); // end "after_setup_theme" action

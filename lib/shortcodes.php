@@ -1,8 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- *	Some handy shortcodes
+ * Shortcodes
  *
- * @package McBoots
+ * - some handy shortcodes
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_shortcode( 'author', function( $atts, $content=null ) {

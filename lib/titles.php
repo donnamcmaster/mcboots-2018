@@ -1,8 +1,14 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- *	Page Titles
+ * Page Titles
  *
- * @package McBoots
+ * - function returns appropriate title for this page, post, or archive
+ * - does not echo
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 namespace McBoots\Titles;

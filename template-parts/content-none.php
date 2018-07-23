@@ -1,9 +1,12 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * Template part for displaying a message that posts cannot be found.
  * Used for 404, search failure, and empty archive pages.
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 	if ( is_search() ) {

@@ -1,9 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  *	Admin Functionality
+ *
  *	- this file is included only if is_admin()
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_filter( 'admin_init', function () {

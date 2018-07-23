@@ -1,8 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * Adds the post type and slug to the <body> class, e.g., "page-about".
+ * Body Class
  *
- * @package McBoots
+ * - adds the post type and slug to the <body> class, e.g., "page-about" 
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_filter( 'body_class', function( $classes ) {

@@ -1,4 +1,12 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+/**
+ * Class mcw_Breadcrumbs
+ *
+ * @package McBoots
+ * @since 0.1
+ */
 
 Class mcw_Breadcrumbs {
 

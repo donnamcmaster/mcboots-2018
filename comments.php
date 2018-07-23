@@ -1,11 +1,14 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * The template for displaying comments.
+ * Comments Template
+ * 
+ * The template that displays the comments area of the page:
+ * - contains both the current comments and the comment form.
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @package Underscores
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 /*

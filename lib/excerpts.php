@@ -1,17 +1,18 @@
 <?php
-/**
- *	Custom Post Excerpts
- *	- filters for excerpt parameters are customized in lib/setup/config.php, e.g.: 
- 
-add_filter( 'excerpt_length', 14 );
-add_filter( 'excerpt_more', ' [&hellip;]' );
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
+/**
+ * Custom Post Excerpts
  *
- * @package McBoots
+ *	Filters for excerpt parameters are customized in lib/setup/config.php, e.g.: 
+ *    add_filter( 'excerpt_length', 14 );
+ *    add_filter( 'excerpt_more', ' [&hellip;]' );
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 namespace McBoots\Excerpts;
-
 
 /**
  *	Returns a "continue" link for excerpts
@@ -21,7 +22,6 @@ function read_more_link ( $post_id ) {
 	$read_more_text = 'read more';
 	return ' <a href="'. get_permalink( $post_id ) . '" class="read-more">' . apply_filters( 'mcb_excerpt_read_more', $read_more_text ) . '</a>';
 }
-
 
 /**
  *	Custom excerpt code

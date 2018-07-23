@@ -1,4 +1,6 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * Views
  *
@@ -8,7 +10,8 @@
  * Subclasses are defined for each post_type, e.g., Post_Views. 
  * Each post_type class can override any of the Base_Views functions. 
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 namespace McBoots\Views;

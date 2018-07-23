@@ -1,8 +1,14 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- *	Activation Options
+ * Activation
+ * 
+ * - called when the theme is first selected in admin and activated
+ * - needs to be replaced with Customizer interface
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 // set uploads path

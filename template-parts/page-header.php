@@ -1,4 +1,6 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * Page Header
  *
@@ -6,7 +8,8 @@
  * "Page" is used here as a generic term, and includes singleton posts, indices, archives,
  * 404s, search results, etc. 
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 use McBoots\Titles;

@@ -1,10 +1,14 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * The template for displaying search forms
  * Modified to use Bootstrap classes by _strap
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
+
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" class="">
         <div class="form-group">

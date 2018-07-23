@@ -1,12 +1,15 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * Theme Header
  *
- * This is the template that displays the top <header> section that contains:
+ * The template that displays the top <header> section:
  * - logo and other branding
  * - main navigation
  *
  * @package McBoots-2018
+ * @since 0.1
  */
 ?>
 

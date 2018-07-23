@@ -1,8 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * Default template file for post lists; used primarily for blog home pages.
+ * Default Template
+ * 
+ * - used primarily for blog home (index) pages
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 use McBoots\Views;

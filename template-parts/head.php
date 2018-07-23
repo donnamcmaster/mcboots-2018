@@ -1,10 +1,15 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * HTML Head
+ * Entry Meta: Head
  *
- * @package McBoots
+ * Prints HTML with meta information for the current post-date/time and author.
+ * This version is from _s
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
-?>
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

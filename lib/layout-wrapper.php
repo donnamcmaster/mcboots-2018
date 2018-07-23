@@ -1,8 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * Wraps content of the template in layout.php.
+ * Layout Wrapper
  *
- * @package McBoots
+ * Wraps content of the template in layout.php. 
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_filter( 'template_include', function( $template ) {

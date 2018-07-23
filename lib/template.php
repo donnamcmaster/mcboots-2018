@@ -1,8 +1,11 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- *	Template Queries
+ * Template Queries
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 namespace McBoots\Template;

@@ -1,14 +1,17 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * entry-meta-head.php
+ * Entry Meta: Head
  *
  * Prints HTML with meta information for the current post-date/time and author.
  * This version is from _s
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
-?>
-		<div class="entry-meta">
+
+<div class="entry-meta">
 
 <?php
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -35,4 +38,4 @@
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 ?>
-		</div>
+</div>

@@ -1,11 +1,14 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * entry-meta-foot.php
- * 
+ * Entry Meta: Foot
+ *
  * used in the post footer to display meta information about cats, tags, comments, dates, etc
  * this version is adapted from DMc's 2014 Roots child theme
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 	$byline = get_post_meta( $post->ID, 'byline', true );

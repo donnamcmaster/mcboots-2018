@@ -1,8 +1,11 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
  * McBoots functions and definitions.
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 call_user_func( function() {

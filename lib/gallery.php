@@ -1,7 +1,10 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * Bootstrap Gallery Code
- * - generates Bootstrap v3 row/col markup based on the # of columns 
+ * Gallery
+ *
+ * - generates Bootstrap v4 row/col markup based on the # of columns 
  * - assumes a 12-column grid; defaults to 3 cols if value isn't a factor of 12
  *   (the default is based on WordPress gallery cols default of 3)
  * - phone-size gets fewer columns with max of 3
@@ -13,7 +16,8 @@
  * http://stackoverflow.com/questions/35772718/output-gallery-shortcode-as-bootstrap-columns-in-wordpress
  * and to https://github.com/cullylarson for review & critique
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 add_filter( 'post_gallery', 'bootstrap_gallery', 10, 3 );

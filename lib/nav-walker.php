@@ -1,8 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
- * Temporarily using slightly modified Roots navigation walker.
+ *	Navigation Menu Walker
  *
- * @package McBoots
+ * Temporarily using slightly modified Roots navigation walker. 
+ *
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 function is_element_empty($element) {

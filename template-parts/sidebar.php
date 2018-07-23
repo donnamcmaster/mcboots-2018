@@ -1,8 +1,13 @@
 <?php
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 /**
+ * Primary Sidebar
+ *
  * The sidebar containing the main widget area.
  *
- * @package McBoots
+ * @package McBoots-2018
+ * @since 0.1
  */
 
 use McBoots\Template;
