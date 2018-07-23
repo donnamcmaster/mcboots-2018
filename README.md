@@ -1,6 +1,10 @@
 ## Synopsis
 
-McBoots is a WordPress template (parent theme) based on the Bootstrap 3 framework. It borrows heavily from Underscores (_s), UnderStrap (_strap), Roots/Sage, and the purely functional code of Cully Larson. But you can blame Donna McMaster for anything that doesn't work right.
+McBoots 2018 is a WordPress template (parent theme) based on the Bootstrap 4 framework. 
+
+It is an evolution of the [McBoots theme](https://github.com/donnamcmaster/mcboots). The primary change is a switch from Bootstrap 3/LESS to Bootstrap 4/SCSS. There are minor changes in many files, but the overall concept and structure remains the same.
+
+Like the original McBoots, McBoots 2018 borrows heavily from Underscores (_s), UnderStrap (_strap), and Roots/Sage, with props to Cully Larson and Kevin Miller. 
 
 ## Motivation
 
@@ -12,18 +16,17 @@ I build a lot of small to medium-sized custom-designed, responsive WordPress sit
 
 ## Status
 
-I developed McBoots in early August 2016. As of June 2018, it's live on six sites plus two WIPs. Consider it Beta level, and please check the code and functionality for yourself before trusting it. Here are the main unfinished pieces: 
+July 2018: just starting to transition the code from McBoots. Planning to release 0.1 by EOM. Consider it Alpha level, and please check the code and functionality for yourself before trusting it. 
 
-* several areas are still WIP, including comments and entry meta for post_type 'post'
-* app.css and the bootstrap js files are not currently being minimized
+The original McBoots development began August 2016. As of July 2018, McBoots is in use on seven active sites. I consider it Beta level. 
 
 ## Installation and Setup
 
-I'm not including build files with the project at this time. The only file that needs compilation is assets/less/app.less. It is compiled into assets/css/app.css. App.less includes the bootstrap files. 
+No build files are included with the project at this time. The only file that needs compilation is `assets/scss/custom.scss`, which includes the Bootstrap 4 source files. It is compiled into `assets/css/custom.css`. 
 
-I made one modification, to pick up variables.less from a copy in assets/less instead of from assets/less/bootstrap. This is because I find it easier to set colors, fonts, and other values in variables.less rather than overriding them later. If you prefer not to touch the Bootstrap distro, edit assets/less/bootstrap/bootstrap.less to pick up variables.php from the bootstrap directory instead. 
+Bootstrap 4 makes it easy to override the colors, fonts, and other values that are initialized in `assets/scss/bootstrap/_variables.scss`. Just edit `assets/scss/custom-overrides.scss`. See [Bootstrap documentation](https://getbootstrap.com/docs/4.1/getting-started/theming/#variable-defaults) for details. 
 
-To understand the HTML wrapper code, look at layout.php and lib/layout-wrapper.php. lib/layout-wrapper.php uses the WordPress 'template_include' filter to capture the main content, and then passes it to layout.php, which embeds it into the wrapper. 
+To understand the HTML wrapper code, look at `layout.php` and `lib/layout-wrapper.php`. The layout wrapper uses the WordPress `template_include` filter to capture the name of the main template file, and then passes it to `layout.php`, which includes it into the overall layout. 
 
 ## Contributors
 
