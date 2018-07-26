@@ -30,9 +30,10 @@ add_action( 'after_setup_theme', function() {
 		'gallery',
 		'caption',
 	) );
-	
-	// options specific to McBoots
-//	add_theme_support( 'mcboots-sidebars' );
+
+	// determine what widget areas to register
+	// see lib/setup/sidebars.php
+	add_theme_support( 'mcboots-sidebars' );
 //	add_theme_support( 'mcboots-blog' );
 
 	$GLOBALS['content_width'] = 1140;
