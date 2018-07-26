@@ -7,7 +7,7 @@
  *   (the default is based on WordPress gallery cols default of 3)
  * - phone-size gets fewer columns with max of 3
  * - add filters to change thumbnail or full sizes
- * - 'img-responsive' is defined in Bootstrap
+ * - 'img-fluid' is defined in Bootstrap
  * - see assets/less/app.less for basic gallery styling 
  *
  * props to http://stackoverflow.com/users/1948627/bitworking for the starting point in
@@ -17,6 +17,8 @@
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_filter( 'post_gallery', 'bootstrap_gallery', 10, 3 );
 function bootstrap_gallery ( $output = '', $atts, $instance ) {
@@ -73,7 +75,7 @@ function bootstrap_gallery ( $output = '', $atts, $instance ) {
 		$img_caption = '';
 		$img_caption = apply_filters( 'mcb_get_gallery_caption', $img_caption, $img_id );
 
-		$thumb_tag = wp_get_attachment_image( $img_id, $atts['thumb_size'], false, ['class'=>'img-responsive'] );
+		$thumb_tag = wp_get_attachment_image( $img_id, $atts['thumb_size'], false, ['class'=>'img-fluid'] );
 
 		// time to start a new row?
 		if ( $cols_printed >= $columns ) {
