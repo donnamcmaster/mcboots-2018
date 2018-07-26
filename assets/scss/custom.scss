@@ -5,25 +5,16 @@
 // override Bootstrap 4 SASS variables
 @import "_custom-overrides.scss";
 
+// include the Font Awesome free icon set 
+// for more information: https://fontawesome.com/
+// see Breadcrumbs section below for a usage example
+@import "fontawesome/fontawesome.scss"; // base styles
+//@import "fontawesome/regular.scss"; // fonts for regular icon style
+@import "fontawesome/solid.scss"; // fonts for solid icon style
+//@import "fontawesome/brands.scss"; // fonts for brand icons
+
 // include Bootstrap 4 SASS files
 @import "bootstrap/bootstrap";
-
-/* ==========================================================================
-   Iconography
-   ========================================================================== */
-
-//== TEMPORARY: use Glyphicons from Bootstrap 3
-//
-//## Specify custom location and filename of the included Glyphicons icon font. 
-
-//** Load fonts from this directory.
-@icon-font-path:          "../fonts/";
-//** File name for all font files.
-@icon-font-name:          "glyphicons-halflings-regular";
-//** Element ID within SVG icon file.
-@icon-font-svg-id:        "glyphicons_halflingsregular";
-
-@import "glyphicons.scss";
 
 /* ==========================================================================
    Base
@@ -32,6 +23,9 @@
 /* ==========================================================================
    Header
    ========================================================================== */
+header .navbar {
+	@extend .mb-3;
+}
 
 /* ==========================================================================
    Navbar Toggle (Hamburger)
@@ -46,6 +40,31 @@
    ========================================================================== */
 
 /* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+
+.breadcrumbs {
+	@extend .mb-3;
+	font-size: 1rem;
+}
+.breadcrumbs .home-icon {
+	@include fa-icon;
+	@extend .fas;
+	@extend .fa-lg;
+
+	text-decoration: none;
+	vertical-align: 0;
+
+	&:before {
+		content: fa-content($fa-var-home);
+	}
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+/* ==========================================================================
    Primary Content
    ========================================================================== */
 
@@ -56,6 +75,9 @@
 /* ==========================================================================
    Sidebar
    ========================================================================== */
+.widget h2 {
+	font-size: 1.5rem;
+}
 
 /* ==========================================================================
    Footer
@@ -68,15 +90,13 @@
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	@extend .mr-2;	
 }
-
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	@extend .ml-2;	
 }
-
 .aligncenter {
 	clear: both;
 	display: block;
