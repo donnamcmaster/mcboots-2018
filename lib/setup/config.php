@@ -33,10 +33,8 @@ add_action( 'after_setup_theme', function() {
 //	add_theme_support( 'mcboots-blog' );
 
 	$GLOBALS['content_width'] = 1140;
-
 });
 
 // customize excerpt parameters 
-add_filter( 'excerpt_length', 20 );
-add_filter( 'excerpt_more', ' [&hellip;]' );
-add_filter( 'mcb_excerpt_read_more', ' read more&nbsp;&raquo;' );
+//define( 'MCB_MAX_EXCERPT_LENGTH', 80 );
+//define( 'MCB_EXCERPT_MORE', ' [&hellip;]' );
