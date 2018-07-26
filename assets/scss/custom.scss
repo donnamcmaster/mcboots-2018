@@ -61,7 +61,47 @@
    Footer
    ========================================================================== */
 
+/* ==========================================================================
+   WordPress WYSIWYG Editor Styles
+   ========================================================================== */
 
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*	Edit Button
+	vertical offsets (horz always 0)
+	blue 0, red -18, ylo -36, purple -54, pink -72, orange -90, green -108, cyan -126, plain -144
+	------------------------------*/
+a.post-edit-link {
+	font-size: 0;
+	color: transparent;
+	vertical-align: 10px;
+	margin-left: 6px;
+//	padding: 8px 8px 9px 8px;	// use this padding for colored pencil
+	padding: 8px 8px 8px 8px;	// use this padding for plain pencil
+	background: transparent url("../img/edit-buttons.png") 0 -144px no-repeat;
+	text-decoration: none;
+}
+a.post-edit-link:hover {
+	background-position: 0 -144px;
+	text-decoration: none;
+}
 
 /* ==========================================================================
    Media Queries
