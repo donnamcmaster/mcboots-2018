@@ -16,7 +16,7 @@ I build a lot of small to medium-sized custom-designed, responsive WordPress sit
 
 ## Status
 
-July 2018: just starting to transition the code from McBoots. Planning to release 0.1 by EOM. Consider it Alpha level, and please check the code and functionality for yourself before trusting it. 
+July 25, 2018: uploaded a complete, functional draft. Planning to release 0.1 by EOM. Consider it Alpha level, and please check the code and functionality for yourself before trusting it. 
 
 The original McBoots development began August 2016. As of July 2018, McBoots is in use on seven active sites. I consider it Beta level. 
 
