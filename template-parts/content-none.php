@@ -7,14 +7,16 @@
  * @since 0.1
  */
 
-	if ( is_search() ) {
-		$message = esc_html( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'mcboots' );
-	} else {
-		$message = esc_html( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'mcboots' );
-	}
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+if ( is_search() ) {
+	$message = esc_html( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'mcboots' );
+} else {
+	$message = esc_html( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'mcboots' );
+}
 
 ?>
-	<div class="entry-content">
-		<p><?=$message; ?></p>
-		<?php get_search_form(); ?>
-	</div><!-- .entry-content -->
+<div class="entry-content">
+	<p><?=$message; ?></p>
+	<?php get_search_form(); ?>
+</div><!-- .entry-content -->
