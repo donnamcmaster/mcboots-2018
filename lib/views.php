@@ -47,10 +47,7 @@ function render_list_item ( $post_type ) {
 		</div><!-- entry-content entry-summary -->
 
 		<footer>
-<?php
-	echo entry_meta_foot( $post_type, false );
-	edit_post_link();
-?>
+			<?= entry_meta_foot( $post_type, false ); ?>
 		</footer>
 
 	</article><!-- #post-## -->
@@ -105,7 +102,6 @@ function render_singular ( $post_type ) {
 	<footer class="entry-footer">
 <?php
 	echo entry_meta_foot( $post_type, true );
-	edit_post_link();
 ?>
 	</footer><!-- .entry-footer -->
 

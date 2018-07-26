@@ -10,9 +10,11 @@
  * @since 0.1
  */
 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 use McBoots\Titles;
 ?>
 
 <header class="page-header">
-	<h1><?= Titles\title(); ?></h1>
+	<h1><?= Titles\title(); ?><?= edit_post_link();?></h1>
 </header>
