@@ -17,10 +17,10 @@ function __construct ( ) {
 	$this->crumbs = array();
 	$this->crumbs[] = array(
 		'url' => '/',
-		'class' => 'home',
-		'name' => '<span class="glyphicon glyphicon-home"></span>',
+		'class' => 'home-icon',
+		'name' => '',
 	);
-	$this->sep = '<span class="sep">/</span>';
+	$this->sep = '<span class="sep pl-2 pr-2">/</span>';
 
 	$this->blog_page = get_option( 'page_for_posts' );
 	if ( is_home() ) {
