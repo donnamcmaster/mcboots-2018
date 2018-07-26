@@ -9,15 +9,17 @@
  * @since 0.1
  */
 
-	$byline = get_post_meta( $post->ID, 'byline', true );
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-	if ( $byline ) {
+$byline = get_post_meta( $post->ID, 'byline', true );
+
+if ( $byline ) {
 ?>
 <p class="byline author vcard">
 	<?php echo $byline; ?>
 </p>
 <?php
-	}
+}
 ?>
 <p class="entry-meta">
 Posted <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time>
