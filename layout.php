@@ -28,13 +28,6 @@ return function( $template ) {
 
 <div class="wrapper container">
 
-<?php
-	// allow for an optional single sidebar
-	if ( Template\display_sidebar() ) {
-		get_template_part( 'template-parts/sidebar', 'primary' );
-	}
-?>
-
 	<?php get_header(); ?>
 
 	<div class="content" id="content" role="document">
