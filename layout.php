@@ -12,6 +12,8 @@
  * @since 0.1
  */
 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 use McBoots\Template;
 
 return function( $template ) {
@@ -22,13 +24,27 @@ return function( $template ) {
 <?php get_template_part( 'template-parts/head' ); ?>
 
 <body <?php body_class(); ?>>
-<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mcboots' ); ?></a>
+<a class="skip-link sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'mcboots' ); ?></a>
 
 <div class="wrapper container">
+
+<?php
+	// allow for an optional single sidebar
+	if ( Template\display_sidebar() ) {
+		get_template_part( 'template-parts/sidebar', 'primary' );
+	}
+?>
 
 	<?php get_header(); ?>
 
 	<div class="content" id="content" role="document">
+
+<?php
+	if ( !is_front_page() && current_theme_supports( 'breadcrumbs' ) ) {
+		get_template_part( 'template-parts/breadcrumbs' );
+	}
+?>
+
 		<div class="row">
 			<main class="site-main <?= Template\main_class(); ?>" role="main">
 				<?php include( $template ); ?>

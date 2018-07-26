@@ -16,6 +16,9 @@ add_action( 'after_setup_theme', function() {
 	// tell wordpress to output the title tag
 	add_theme_support( 'title-tag' );
 
+	// print a breadcrumb trail just below the page header
+	add_theme_support( 'breadcrumbs' );
+
 	// make theme available for translation.
 	load_theme_textdomain( 'mcboots', get_template_directory() . '/languages' );
 

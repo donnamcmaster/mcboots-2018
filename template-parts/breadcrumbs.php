@@ -1,12 +1,12 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Class mcw_Breadcrumbs
  *
  * @package McBoots
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 Class mcw_Breadcrumbs {
 
@@ -145,11 +145,6 @@ private function get_page_crumbs ( $page_ID, $link_last=false ) {
 }
 
 } // Class mcw_Breadcrumbs
-
-// for this site, display breadcrumbs only for blog
-if ( get_post_type() <> 'post' ) {
-	return;
-}
 
 ?>
 <div class="row">
