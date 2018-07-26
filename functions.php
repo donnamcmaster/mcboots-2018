@@ -6,6 +6,8 @@
  * @since 0.1
  */
 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 call_user_func( function() {
 	$setupScripts = [
 		// initialization & configuration
@@ -18,14 +20,16 @@ call_user_func( function() {
 		// core template files
 		'/lib/layout-wrapper.php',
 		'/lib/body-class.php',
-		'/lib/nav-walker.php',
+//		'/lib/nav-walker.php',
+		'/lib/class-wp-bootstrap-navwalker.php',
 		'/lib/titles.php',
 		'/lib/template.php',
 		'/lib/views.php',
 
 		// extras
-		'/lib/shortcodes.php',
+		'/lib/excerpts.php',
 		'/lib/gallery.php',
+		'/lib/shortcodes.php',
 		
 		// some options for initial activation
 //		'/lib/activation.php',
