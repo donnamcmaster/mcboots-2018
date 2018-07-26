@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Template Queries
  *
@@ -9,6 +7,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  */
 
 namespace McBoots\Template;
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 // does this page have a sidebar?
 function display_sidebar ( $sidebar='sidebar-primary' ) {

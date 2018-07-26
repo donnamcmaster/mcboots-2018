@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Shortcodes
  *
@@ -9,6 +7,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_shortcode( 'author', function( $atts, $content=null ) {
     ob_start();

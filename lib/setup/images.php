@@ -1,12 +1,12 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Configure Image Sizes and Galleries
  *
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_action( 'after_setup_theme', function() {
 	// fixed sizes for special situations

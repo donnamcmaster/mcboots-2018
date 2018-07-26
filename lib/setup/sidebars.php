@@ -8,6 +8,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @since 0.1
  */
 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 add_action( 'after_setup_theme', function() {
 
 	if ( current_theme_supports ( 'mcboots-sidebars' ) ) {

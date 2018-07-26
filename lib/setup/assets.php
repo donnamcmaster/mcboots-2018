@@ -1,12 +1,12 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Enqueue Stylesheets & Scripts
  *
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_action( 'wp_enqueue_scripts', function() {
   	// enqueue custom fonts if needed

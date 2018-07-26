@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Activation
  * 
@@ -10,6 +8,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 // set uploads path
 add_action( 'admin_init', function() {

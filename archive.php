@@ -1,12 +1,12 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * The template for displaying archive pages.
  *
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use McBoots\Views;
 

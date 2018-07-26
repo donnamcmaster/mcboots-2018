@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  *	Admin Functionality
  *
@@ -9,6 +7,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_filter( 'admin_init', function () {
 	// block access to /wp-admin if current user can't edit 

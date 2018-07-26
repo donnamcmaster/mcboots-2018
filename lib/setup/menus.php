@@ -8,6 +8,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @since 0.1
  */
 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 add_action( 'init', function() {
 	register_nav_menu( 'primary_navigation', 'Primary Navigation' );
 	register_nav_menu( 'action_menu', 'Action Menu' );

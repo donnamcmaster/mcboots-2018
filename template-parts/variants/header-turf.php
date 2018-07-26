@@ -14,6 +14,9 @@
  *
  * @package McBoots-2018
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 ?>
 
 <header class="banner navbar navbar-default navbar-static-top" role="banner">

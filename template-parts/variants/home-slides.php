@@ -8,6 +8,8 @@
  * @package McBoots
  */
 
+	if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
 	$sliders = get_post_meta( $post->ID, 'home_slides', true );
 
 	// fall back to featured image if no slides configured

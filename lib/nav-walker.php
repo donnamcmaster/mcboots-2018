@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  *	Navigation Menu Walker
  *
@@ -9,6 +7,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 function is_element_empty($element) {
   $element = trim($element);

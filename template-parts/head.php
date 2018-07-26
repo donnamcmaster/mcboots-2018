@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Entry Meta: Head
  *
@@ -11,6 +9,9 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @since 0.1
  */
 
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+?>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

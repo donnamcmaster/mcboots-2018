@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Page Titles
  *
@@ -12,6 +10,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  */
 
 namespace McBoots\Titles;
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 function title() {
 	if ( is_home() ) {

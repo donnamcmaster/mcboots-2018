@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Views
  *
@@ -15,6 +13,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  */
 
 namespace McBoots\Views;
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 /**
  * Method render_list_item

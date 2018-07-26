@@ -1,6 +1,4 @@
 <?php
-if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
 /**
  * Layout Wrapper
  *
@@ -9,6 +7,8 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
  * @package McBoots-2018
  * @since 0.1
  */
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_filter( 'template_include', function( $template ) {
     if ( empty( $template ) || !is_string( $template ) || !is_file( $template ) ) return $template;
