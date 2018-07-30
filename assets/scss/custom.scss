@@ -18,9 +18,6 @@
 /* ==========================================================================
    Header
    ========================================================================== */
-header .navbar {
-	@extend .mb-3;
-}
 
 /* ==========================================================================
    Navbar Toggle (Hamburger)
@@ -35,19 +32,6 @@ header .navbar {
    ========================================================================== */
 
 /* ==========================================================================
-   Breadcrumbs
-   ========================================================================== */
-
-.breadcrumbs {
-	@extend .mb-3;
-	font-size: 0.9rem;
-}
-.breadcrumbs .sep {
-	@extend .pl-1;
-	@extend .pr-1;
-}
-
-/* ==========================================================================
    Primary Content
    ========================================================================== */
 
@@ -58,9 +42,6 @@ header .navbar {
 /* ==========================================================================
    Sidebar
    ========================================================================== */
-.widget h2 {
-	font-size: 1.5rem;
-}
 
 /* ==========================================================================
    Footer
@@ -87,25 +68,6 @@ header .navbar {
 	margin-right: auto;
 }
 
-/*	Edit Button
-	vertical offsets (horz always 0)
-	blue 0, red -18, ylo -36, purple -54, pink -72, orange -90, green -108, cyan -126, plain -144
-	------------------------------*/
-a.post-edit-link {
-	font-size: 0;
-	color: transparent;
-	vertical-align: 10px;
-	margin-left: 6px;
-//	padding: 8px 8px 9px 8px;	// use this padding for colored pencil
-	padding: 8px 8px 8px 8px;	// use this padding for plain pencil
-	background: transparent url("../img/edit-buttons.png") 0 -144px no-repeat;
-	text-decoration: none;
-}
-a.post-edit-link:hover {
-	background-position: 0 -144px;
-	text-decoration: none;
-}
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -115,12 +77,6 @@ a.post-edit-link:hover {
 }
 
 @include media-breakpoint-up(md) {
-	.phone-only {
-		display: none !important;
-	}
-	.no-phone {
-		display: block;
-	}
 
 	/* Header: branding
 	------------------------------*/
