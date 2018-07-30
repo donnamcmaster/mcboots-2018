@@ -18,9 +18,9 @@ function __construct ( ) {
 	$this->crumbs[] = array(
 		'url' => '/',
 		'class' => 'home-icon',
-		'name' => '',
+		'name' => '<span class="text-name">Home</span>',
 	);
-	$this->sep = '<span class="sep pl-2 pr-2">/</span>';
+	$this->sep = '<span class="sep">/</span>';
 
 	$this->blog_page = get_option( 'page_for_posts' );
 	if ( is_home() ) {

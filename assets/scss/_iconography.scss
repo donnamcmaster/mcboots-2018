@@ -1,0 +1,77 @@
+/*
+ * Iconography Options
+ * McBoots 2018, v 0.1
+ */
+
+/* ==========================================================================
+   Example 1: Create CSS Icon from SVG Code
+   - uses the code from https://useiconic.com/open
+   - does not require any included fonts or icon files
+   - see https://gist.github.com/donnamcmaster/b078880fb01fe7a279db12492c1b5561
+   ========================================================================== */
+$home-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$link-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 3h1v4h2v-2h2v2h2v-4.03l1 .03-4-3z'/%3E%3C/svg%3E"), "#", "%23");
+$home-icon-hover-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$link-hover-color}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 3h1v4h2v-2h2v2h2v-4.03l1 .03-4-3z'/%3E%3C/svg%3E"), "#", "%23");
+.breadcrumbs .home-icon {
+	display: inline-block;
+	width: 0.95rem;
+	height: 0.95rem;
+	background: transparent no-repeat center center;
+	background-size: 100% 100%;
+	background-image: $home-icon-bg;
+	text-decoration: none;
+	vertical-align: -3px;
+	color: transparent; // applies to the "Home" text
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		background-image: $home-icon-hover-bg;
+	}
+}
+
+/* ==========================================================================
+   Example 2: use Glyphicons from Bootstrap 3
+   - see https://getbootstrap.com/docs/3.3/components/
+   - font and sccs files are in assets/glyphicons
+   - edit path names in glyphicons.sccs if necessary
+   ========================================================================== */
+@import "../glyphicons/glyphicons.scss";
+.breadcrumbs .home-icon-example2 {
+	@extend .glyphicon;
+	@extend .glyphicon-home;
+	.text-name {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   Example 3: Font Awesome (fonts and SVG files)
+   - download the Font Awesome free icon set https://fontawesome.com/
+   - move the distro files into assets/fontawesome
+   - import stylesheets as needed
+   ========================================================================== */
+// font path is relative to the compiled CSS file
+$fa-font-path: "../fontawesome/webfonts";
+
+// import fontawesome.scss + at least one of the others
+@import "../fontawesome/sccs/fontawesome.scss"; // base styles
+//@import "../fontawesome/sccs/regular.scss"; // fonts for regular icon style
+@import "../fontawesome/sccs/solid.scss"; // fonts for solid icon style
+//@import "../fontawesome/sccs/brands.scss"; // fonts for brand icons
+
+.breadcrumbs .home-icon-example3 {
+	@include fa-icon;
+	@extend .fas;
+	@extend .fa-lg;
+	text-decoration: none;
+	vertical-align: 0;
+	.text-name {
+		display: none;
+	}
+	&:before {
+		content: fa-content($fa-var-home);
+	}
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}

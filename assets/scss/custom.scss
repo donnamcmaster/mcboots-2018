@@ -2,19 +2,18 @@
  * McBoots 2018, v 0.1
  */
 
+/* ==========================================================================
+   Included SCCS Files
+   ========================================================================== */
 // override Bootstrap 4 SASS variables
-@import "_custom-overrides.scss";
-
-// include the Font Awesome free icon set 
-// for more information: https://fontawesome.com/
-// see Breadcrumbs section below for a usage example
-@import "fontawesome/fontawesome.scss"; // base styles
-//@import "fontawesome/regular.scss"; // fonts for regular icon style
-@import "fontawesome/solid.scss"; // fonts for solid icon style
-//@import "fontawesome/brands.scss"; // fonts for brand icons
+@import "_custom-variables.scss";
 
 // include Bootstrap 4 SASS files
 @import "bootstrap/bootstrap";
+
+// optional icon definitions file
+// contains examples using SVG code, Glyphicons, Font Awesome
+@import "_iconography.scss";
 
 /* ==========================================================================
    Base
@@ -45,23 +44,11 @@ header .navbar {
 
 .breadcrumbs {
 	@extend .mb-3;
-	font-size: 1rem;
+	font-size: 0.9rem;
 }
-.breadcrumbs .home-icon {
-	@include fa-icon;
-	@extend .fas;
-	@extend .fa-lg;
-
-	text-decoration: none;
-	vertical-align: 0;
-
-	&:before {
-		content: fa-content($fa-var-home);
-	}
-	&:hover,
-	&:focus {
-		text-decoration: none;
-	}
+.breadcrumbs .sep {
+	@extend .pl-1;
+	@extend .pr-1;
 }
 
 /* ==========================================================================
