@@ -5,15 +5,11 @@
 /* ==========================================================================
    Included SCCS Files
    ========================================================================== */
-// override Bootstrap 4 SASS variables
+// define Bootstrap 4 SASS variables; override _variables.sccs defaults
 @import "_custom-variables.scss";
 
 // include Bootstrap 4 SASS files
 @import "bootstrap/bootstrap";
-
-// optional icon definitions file
-// contains examples using SVG code, Glyphicons, Font Awesome
-@import "_iconography.scss";
 
 /* ==========================================================================
    Base
