@@ -108,8 +108,8 @@ function render_singular ( $post_type ) {
 </article><!-- #post-## -->
 
 <?php
-	echo post_navigation( $post_type, true );
-	echo render_comments( $post_type, true );
+	post_navigation( $post_type, true );
+	render_comments( $post_type, true );
 
 	return ob_get_clean();
 }
