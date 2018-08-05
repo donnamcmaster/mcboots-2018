@@ -12,19 +12,45 @@
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-$footer_nav_args = [
-	'theme_location' => 'footer_menu', 
-	'menu_class' => 'nav justify-content-center mt-1 mb-2',
-	'depth' => 1, // 1 = no dropdowns, 2 = with dropdowns.
-	'walker' => new WP_Bootstrap_Navwalker(),
-];
+if ( has_nav_menu( 'footer_menu' ) ) {
+	$footer_nav_args = [
+		'theme_location' => 'footer_menu', 
+		'menu_class' => 'nav justify-content-center mt-1 mb-2',
+		'depth' => 1, // 1 = no dropdowns, 2 = with dropdowns.
+		'walker' => new WP_Bootstrap_Navwalker(),
+	];
+} else {
+	$footer_nav_args = false;
+}
+
+$footer_content = get_option('mcw_common_content');
+if ( $footer_content ) {
+	$initial_year = isset( $footer_content['copyright_year'] ) ? $footer_content['copyright_year'] : 0;
+	$current_year = date( 'Y' );
+	if ( $initial_year && ( $initial_year < $current_year) ) {
+		$copyright_years = "$initial_year - $current_year";
+	} else {
+		$copyright_years = $current_year;
+	}
+	$copyright_statement = str_replace(
+		'[years]',
+		$copyright_years,
+		wptexturize( $footer_content['copyright_statement'] )
+	);
+} else {
+	$copyright_statement = '&copy;' .bloginfo( 'name' ) .date('Y') . edit_post_link();
+}
 ?>
 
 <footer class="content-info" role="contentinfo">
 	<div class="site-info">
-		<?php if ( has_nav_menu( 'footer_menu' ) ) : ?>
-			<?php wp_nav_menu( $footer_nav_args ); ?>
-		<?php endif; ?>
-		<p class="copyright">&copy; <?= bloginfo( 'name' ); ?> <?php echo date('Y'); ?> <?= edit_post_link();?></p>
-	</div><!-- .site-info -->
-</footer><!-- .content-info -->
+
+<?php
+	if ( $footer_nav_args ) {
+		wp_nav_menu( $footer_nav_args );
+	}
+?>
+
+		<p class="copyright"><?= $copyright_statement; ?></p>
+	</div><!-- site-info -->
+</footer><!-- content-info -->
