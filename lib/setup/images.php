@@ -51,3 +51,18 @@ add_filter( 'mcb_get_gallery_caption', function( $caption, $id ) {
 	$caption = $_post->post_excerpt ? $_post->post_excerpt : $_post->post_title;
 	return esc_html( $caption );
 }, 10, 2 );
+
+/**
+ *	Custom Image Sizes
+ *	- adds the custom image sizes to the list of choices in Insert Media
+ */
+add_filter( 'image_size_names_choose', function ( $sizes ) {
+	global $_wp_additional_image_sizes;
+	if ( !empty( $_wp_additional_image_sizes ) ) {
+		foreach ( $_wp_additional_image_sizes as $id => $data ) {
+			if ( !isset( $sizes[$id] ) )
+			$sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+		}
+	}
+	return $sizes;
+});
