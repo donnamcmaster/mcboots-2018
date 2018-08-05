@@ -17,9 +17,13 @@ add_action( 'wp_enqueue_scripts', function() {
 });
 
 
-// loading Bootstrap scripts from CDN; require special syntax
-// loaded into footer; jQuery is loaded by WordPress into header
-// see https://getbootstrap.com/docs/4.1/getting-started/introduction/#js
+/**
+ * Load Bootstrap Scripts
+ *
+ * - loading Bootstrap scripts from CDN; require special syntax
+ * - loaded into footer; jQuery is loaded by WordPress into header
+ * - see https://getbootstrap.com/docs/4.1/getting-started/introduction/#js
+ */
 add_action( 'wp_footer', function() {
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

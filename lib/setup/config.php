@@ -38,7 +38,3 @@ add_action( 'after_setup_theme', function() {
 
 	$GLOBALS['content_width'] = 1140;
 });
-
-// customize excerpt parameters 
-//define( 'MCB_MAX_EXCERPT_LENGTH', 80 );
-//define( 'MCB_EXCERPT_MORE', ' [&hellip;]' );
