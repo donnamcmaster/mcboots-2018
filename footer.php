@@ -15,9 +15,10 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 if ( has_nav_menu( 'footer_menu' ) ) {
 	$footer_nav_args = [
 		'theme_location' => 'footer_menu', 
-		'menu_class' => 'nav justify-content-center mt-1 mb-2',
+		'menu_class' => 'nav justify-content-center mt-1 mb-5',
 		'depth' => 1, // 1 = no dropdowns, 2 = with dropdowns.
 		'walker' => new WP_Bootstrap_Navwalker(),
+		'container' => false,
 	];
 } else {
 	$footer_nav_args = false;
@@ -38,7 +39,7 @@ if ( $footer_content ) {
 		wptexturize( $footer_content['copyright_statement'] )
 	);
 } else {
-	$copyright_statement = '&copy;' .bloginfo( 'name' ) .date('Y') . edit_post_link();
+	$copyright_statement = '&copy;' . get_bloginfo( 'name' ) .' '. date('Y');
 }
 ?>
 

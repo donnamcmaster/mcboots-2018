@@ -17,6 +17,7 @@ $primary_nav_args = [
 	'menu_class' => 'navbar-nav mr-auto mt-2 mt-lg-0',
 	'depth' => 2, // 1 = no dropdowns, 2 = with dropdowns.
 	'walker' => new WP_Bootstrap_Navwalker(),
+	'container' => false,
 ];
 
 ?>
