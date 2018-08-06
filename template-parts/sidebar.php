@@ -11,7 +11,6 @@
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use McBoots\Template;
-
 ?>
 
 <aside class="widget-area sidebar-primary <?= Template\sidebar_class(); ?>" role="complementary">

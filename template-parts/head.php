@@ -1,9 +1,8 @@
 <?php
 /**
- * Entry Meta: Head
+ * Template Part: Head
  *
- * Prints HTML with meta information for the current post-date/time and author.
- * This version is from _s
+ * Prints HTML with the <head> part of the file. Included by layout.php. 
  *
  * @package McBoots-2018
  * @since 0.1
