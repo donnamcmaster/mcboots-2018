@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', function() {
   	// enqueue custom fonts if needed
 // 	wp_enqueue_style( 'custom-fonts', '//fast.fonts.net/cssapi/xxx.css' );
 
-    wp_enqueue_style( 'mcboots-css', get_stylesheet_directory_uri() . '/assets/css/custom.css', [], null );
+    wp_enqueue_style( 'mcboots-css', get_stylesheet_directory_uri() . '/assets/css/app.css', [], null );
     wp_enqueue_script( 'jquery' );
 });
 
