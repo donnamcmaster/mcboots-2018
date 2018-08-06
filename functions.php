@@ -23,8 +23,8 @@ call_user_func( function() {
 //		'/lib/nav-walker.php',
 		'/lib/class-wp-bootstrap-navwalker.php',
 		'/lib/titles.php',
-		'/lib/template.php',
-		'/lib/views.php',
+		'/lib/template-queries.php',
+		'/lib/template-pieces.php',
 
 		// extras
 		'/lib/excerpts.php',

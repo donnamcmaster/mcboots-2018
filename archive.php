@@ -1,14 +1,14 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * Archive Template
+ * 
+ * The default template for displaying archive (date or taxonomy) pages, for any post type.
  *
  * @package McBoots-2018
  * @since 0.1
  */
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
-
-use McBoots\Views;
 
 get_template_part( 'template-parts/page', 'header' );
 
@@ -18,7 +18,7 @@ if ( have_posts() ) {
 
 <?php
 	while ( have_posts() ) : the_post();
-		echo Views\render_list_item( get_post_type() );
+		get_template_part( 'template-parts/content', get_post_type() );
 	endwhile;
 ?>
 	</ol>
