@@ -45,8 +45,9 @@ return function( $template ) {
 
 <?php
 	// allow for an optional single sidebar
-	if ( Template\display_sidebar() ) {
-		get_template_part( 'template-parts/sidebar', 'primary' );
+	$sidebar = Template\display_sidebar();
+	if ( $sidebar ) {
+		get_template_part( 'template-parts/sidebar', $sidebar );
 	}
 ?>
 		</div><!-- row -->
@@ -54,7 +55,7 @@ return function( $template ) {
 
 <?php
 	// allow for a full-width aside between content and footer
-	if ( Template\display_sidebar( 'footbar' ) ) {
+	if ( Template\display_footbar() ) {
 		get_template_part( 'template-parts/aside', 'footbar' );
 	}
 
