@@ -20,20 +20,36 @@ function __construct ( ) {
 		'class' => 'home-icon',
 		'name' => '<span class="text-name">Home</span>',
 	);
-	$this->sep = '<span class="sep">/</span>';
-
+	$this->sep = '<span class="sep"> &bull; </span>';
 	$this->blog_page = get_option( 'page_for_posts' );
+
+	// blog index page
 	if ( is_home() ) {
 		$this->get_page_crumbs( $this->blog_page );
+
+	// not in the page hierarchy
 	} elseif ( is_404() || is_search() ) {
 		// do nothing; just print the home page link
+
+	// taxonomy or date archive
 	} elseif ( is_archive() ) {
 		$this->get_blog_archive_crumbs();
+
+	// single blog post
 	} elseif ( $post->post_type == 'post' ) {
 		$this->get_blog_post_crumbs();
+
+	// example of how to handle a single custom post type
+	} elseif ( $post->post_type == 'event' ) {
+		$this->event_calendar_page_id = 2;
+		$this->get_event_post_crumbs();
+
+	// page
 	} elseif ( is_page() ) {
 		$this->get_page_crumbs( $post->ID );
 	}
+	// final default is to display only the Home link 
+
 	$this->print_crumbs();
 }
 
@@ -103,7 +119,7 @@ private function get_blog_post_crumbs () {
 
 private function get_event_post_crumbs () {
 	global $post;
-	$this->get_page_crumbs( MCW_EVENTS_PAGE_ID, true );
+	$this->get_page_crumbs( $this->event_calendar_page_id, true );
 	$this->add_crumb( $post );
 }
 
