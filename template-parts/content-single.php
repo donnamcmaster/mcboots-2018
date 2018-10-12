@@ -30,12 +30,7 @@ $post_type = get_post_type();
 	<div class="entry-content">
 <?php
 	the_content();
-
-	// for multi-page articles
-	wp_link_pages( array(
-		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mcboots' ),
-		'after'  => '</div>',
-	) );
+	Pieces\link_pages();
 ?>
 	</div><!-- .entry-content -->
 

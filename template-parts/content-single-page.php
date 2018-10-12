@@ -14,16 +14,11 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 use McBoots\Pieces;
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article <?php post_class(); ?>>
 	<div class="entry-content">
 <?php
 	the_content();
-
-	// for multi-page articles
-	wp_link_pages( array(
-		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mcboots' ),
-		'after'  => '</div>',
-	) );
+	Pieces\link_pages();
 ?>
 	</div><!-- .entry-content -->
 

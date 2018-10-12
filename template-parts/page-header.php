@@ -13,8 +13,10 @@
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 use McBoots\Titles;
+use McBoots\Pieces;
 ?>
 
 <header class="page-header">
 	<h1><?= Titles\title(); ?></h1>
+	<?php Pieces\report_page_num(); ?>
 </header>

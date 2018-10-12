@@ -79,7 +79,7 @@ function post_entry_meta_foot ( $is_singular ) {
 
 
 /**
- * Gatekeepers: figure out which function to call
+ * Small bits
  */
 function entry_meta_head ( $post_type, $is_singular ) {
 	if ( ( $post_type == 'post' ) && !is_search() ) {
@@ -101,6 +101,27 @@ function post_navigation ( $post_type, $is_singular ) {
 	if ( $post_type == 'post' ) {
 		the_post_navigation();
 	}
+}
+
+function link_pages () {
+	wp_link_pages( array(
+		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages: ', 'mcboots' ) . '</span>',
+		'after'       => '</div>',
+		'link_before' => '<span>',
+		'link_after'  => '</span>',
+	) );
+}
+
+function report_page_num () {
+	global $numpages, $multipage;
+	if ( !$multipage ) {
+		return;
+	}
+	$this_page = get_query_var( 'page' );
+	$this_page = $this_page ? $this_page : 1;
+?>
+	<div class="this-page">Page <?= $this_page; ?> of <?= $numpages; ?></div>
+<?php
 }
 
 function render_comments ( $post_type, $is_singular ) {
