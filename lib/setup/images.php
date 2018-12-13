@@ -29,14 +29,21 @@ add_action( 'after_setup_theme', function() {
 // avoids having the gallery popup image be unnecessarily huge
 // the default size is 'full'
 // 'max-gallery' is defined in lib/setup/images.php
-add_filter( 'mcb_gallery_enlarged_size', function() {
+add_filter( 'mcb_gallery_enlarged_size', function( $img_size ) {
 	return 'max-gallery';
 });
 
 /*
 usually no need to filter 'mcb_gallery_thumb_size' as 'thumbnail' is default
-add_filter( 'mcb_gallery_thumb_size', function() {
+add_filter( 'mcb_gallery_thumb_size', function( $img_size ) {
 	return 'thumbnail';
+});
+*/
+
+/*
+usually no need to filter 'mcb_gallery_default_cols' as it can be overridden
+add_filter( 'mcb_gallery_default_cols', function( $nr_cols ) {
+	return 4;
 });
 */
 
