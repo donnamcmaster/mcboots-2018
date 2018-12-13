@@ -22,17 +22,21 @@ if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_filter( 'post_gallery', 'bootstrap_gallery', 10, 3 );
 function bootstrap_gallery ( $output = '', $atts, $instance ) {
-	$default_number_columns = 3;
+	// if no images, return
+	if ( !isset( $atts['ids'] ) || !$atts['ids'] ) {
+		return;
+	}
+
 	$defaults = [
-		'columns' => $default_number_columns,
-		'thumb_size' => apply_filters( 'mcb_gallery_thumb_size', 'thumbnail' ),
+		'columns' => apply_filters( 'mcb_gallery_default_cols', 3 ),
+		'thumb_size' => '',
 		'enlarged_size' => apply_filters( 'mcb_gallery_enlarged_size', 'full' ),
 	];
 	$atts = array_merge( $defaults, $atts );
 
-	// if no images, return
-	if ( !isset( $atts['ids'] ) || !$atts['ids'] ) {
-		return;
+	// if thumbnail size not specified, set to 'thumbnail' but allow theme to override
+	if ( !$atts['thumb_size'] ) {
+		$atts['thumb_size'] = apply_filters( 'mcb_gallery_thumb_size', 'thumbnail' );
 	}
 
 	$columns = $atts['columns'];
@@ -40,20 +44,20 @@ function bootstrap_gallery ( $output = '', $atts, $instance ) {
 
 	// map number of columns to the Bootstrap CSS markup
 	// if unworkable # of columns, set it to 3
+	$col_map = [
+		// if fewer than 3 columns, go to 1 column in phone-size
+		1 => 'col-12',
+		2 => 'col-sm-6',
+
+		// with flexbox, we can have any number of cols at any size
+		3 => 'col-md-4 col-6',
+		4 => 'col-lg-3 col-md-4 col-6',
+		6 => 'col-lg-2 col-md-3 col-4',
+		12 => 'col-md-1 col-2',	// actually not a good idea!
+	];
 	if ( !isset( $col_map[$columns] ) ) {
 		$columns = $default_number_columns;
 	}
-	$col_map = [
-		// if fewer than 4 columns, go to 1 column in phone-size
-		1 => 'col-sm-12',
-		2 => 'col-sm-6',
-		3 => 'col-sm-4',
-
-		// if 4 or 6 columns, then phone-size gets half that many
-		4 => 'col-sm-3 col-xs-6',
-		6 => 'col-sm-2 col-xs-4',
-		12 => 'col-sm-1',
-	];
 	$col_class = $col_map[$columns];
 
 	// start collecting the output
@@ -76,17 +80,6 @@ function bootstrap_gallery ( $output = '', $atts, $instance ) {
 		$img_caption = apply_filters( 'mcb_get_gallery_caption', $img_caption, $img_id );
 
 		$thumb_tag = wp_get_attachment_image( $img_id, $atts['thumb_size'], false, ['class'=>'img-fluid'] );
-
-		// time to start a new row?
-		if ( $cols_printed >= $columns ) {
-			$cols_printed = 0;
-?>
-	</div><!-- row -->
-	<div class="row">
-
-<?php
-		} // if new row
-
 ?>
 		<div class="gallery_item <?= $col_class;?>">
 			<a data-gallery="gallery" href="<?= $img_src;?>" title="<?= $img_caption;?>">
