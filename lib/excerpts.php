@@ -63,8 +63,11 @@ function get_custom_excerpt ( $post_id=null, $excerpt_length=null, $read_more_li
 	if ( empty( $post_to_excerpt ) ) {
 		return '';
 	}
-	$text = $post_to_excerpt->post_excerpt ? $post_to_excerpt->post_excerpt : $post_to_excerpt->post_content;
-	$text = trim_excerpt( $text, $excerpt_length );
+	if ( $post_to_excerpt->post_excerpt ) {
+		$text = $post_to_excerpt->post_excerpt;
+	} else {
+		$text = trim_excerpt( $post_to_excerpt->post_content, $excerpt_length );
+	}
 	if ( $read_more_link ) {
 		$text .= read_more_link( $post_to_excerpt->ID );
 	}
