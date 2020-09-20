@@ -27,16 +27,29 @@ function bootstrap_gallery ( $output = '', $atts, $instance ) {
 		return;
 	}
 
+	// default columns=3, set by WordPress, not passed in $atts!
+	if ( !isset( $atts['columns'] ) ) {
+		$atts['columns'] = 3;
+	}
 	$defaults = [
-		'columns' => apply_filters( 'mcb_gallery_default_cols', 3 ),
-		'thumb_size' => '',
+		'columns' => 0,
+		'size' => '',
+		'show_titles' => false,
 		'enlarged_size' => apply_filters( 'mcb_gallery_enlarged_size', 'full' ),
 	];
 	$atts = array_merge( $defaults, $atts );
 
+	// allow "yes" or non-zero number to enable titles with thumbnails
+	if ( $atts['show_titles'] == 'yes' ) {
+		 $atts['show_titles'] = true;
+	}
+
+	// allow theme to override nr columns
+	$atts['columns'] = apply_filters( 'mcb_gallery_columns', $atts['columns'] );
+
 	// if thumbnail size not specified, set to 'thumbnail' but allow theme to override
-	if ( !$atts['thumb_size'] ) {
-		$atts['thumb_size'] = apply_filters( 'mcb_gallery_thumb_size', 'thumbnail' );
+	if ( !$atts['size'] ) {
+		$atts['size'] = apply_filters( 'mcb_gallery_thumb_size', 'thumbnail' );
 	}
 
 	$columns = $atts['columns'];
@@ -78,13 +91,24 @@ function bootstrap_gallery ( $output = '', $atts, $instance ) {
 
 		$img_caption = '';
 		$img_caption = apply_filters( 'mcb_get_gallery_caption', $img_caption, $img_id );
+		$img_title = $atts['show_titles'] ? get_the_title( $img_id ) : '';
 
-		$thumb_tag = wp_get_attachment_image( $img_id, $atts['thumb_size'], false, ['class'=>'img-fluid'] );
+		$thumb_tag = wp_get_attachment_image( $img_id, $atts['size'], false, ['class'=>'img-fluid'] );
 ?>
 		<div class="gallery_item <?= $col_class;?>">
-			<a data-gallery="gallery" href="<?= $img_src;?>" title="<?= $img_caption;?>">
-				<?= $thumb_tag;?>
-			</a>
+			<div class="gallery_img">
+				<a data-gallery="gallery" href="<?= $img_src;?>" title="<?= $img_caption;?>">
+					<?= $thumb_tag;?>
+				</a>
+			</div>
+<?php
+		if ( $img_title ) {
+?>
+			<div class="pcaption"><?= $img_title; ?></div>
+
+<?php
+		}
+?>
 		</div>
 
 <?php
