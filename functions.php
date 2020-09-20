@@ -20,7 +20,6 @@ call_user_func( function() {
 		// core template files
 		'/lib/layout-wrapper.php',
 		'/lib/body-class.php',
-//		'/lib/nav-walker.php',
 		'/lib/class-wp-bootstrap-navwalker.php',
 		'/lib/titles.php',
 		'/lib/template-queries.php',
